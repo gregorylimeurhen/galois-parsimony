@@ -1,0 +1,80 @@
+\documentclass{amsart}
+
+\usepackage{amssymb}
+
+\usepackage{amsthm}
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}{Corollary}
+
+\usepackage{parskip}
+\makeatletter
+\def\thm@space@setup{\thm@preskip=\parskip\thm@postskip=0pt}
+\makeatother
+
+\title{Galois Parsimony}
+\author{Gregory Lim}
+\date{\today}
+
+\begin{document}
+
+\begin{abstract}
+	In this paper, we prove and interpret the antitone Galois connection induced by satisfaction between sets of sentences and classes of structures in first-order logic.
+\end{abstract}
+
+\maketitle
+
+Let $\mathcal{L}$ be a first-order language,
+and $\mathcal{S}$ be a set of $\mathcal{L}$-sentences,
+and $\mathcal{M}$ be a class of $\mathcal{L}$-structures.
+
+\begin{definition}[Subject of Set of Sentences]
+	Let $\Phi\subseteq\mathcal{S}$.
+	\[
+		\operatorname{subj}(\Phi)
+		=
+		\{
+			m\in\mathcal{M}
+			\mid
+			\forall\varphi\in\Phi(m\vDash\varphi)
+		\}
+	\]
+\end{definition}
+
+\begin{definition}[Theory of Class of Structures]
+	Let $M\subseteq\mathcal{M}$.
+	\[
+		\operatorname{th}(M)
+		=
+		\{
+			\varphi\in\mathcal{S}
+			\mid
+			\forall m\in M(m\vDash\varphi)
+		\}
+	\]
+\end{definition}
+
+\begin{theorem}
+	Let $\Phi\subseteq\mathcal{S}$, and $M\subseteq\mathcal{M}$.
+	\[
+		\Phi\subseteq\operatorname{th}(M)
+		\iff
+		M\subseteq\operatorname{subj}(\Phi)
+	\]
+\end{theorem}
+
+\begin{proof}
+	\[
+		\Phi\subseteq\operatorname{th}(M)
+		\iff
+		\forall\varphi\in\Phi,\forall m\in M(m\vDash\varphi)
+		\iff
+		M\subseteq\operatorname{subj}(\Phi)
+	\]
+\end{proof}
+
+The syntax--semantics correspondence reverses inclusion: more axioms yield fewer models.
+This is a precise sense in which more constraints yield fewer possible worlds.
+
+\end{document}
