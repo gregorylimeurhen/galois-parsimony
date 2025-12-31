@@ -20,7 +20,7 @@
 \begin{document}
 
 \begin{abstract}
-	In this paper, we prove and interpret the antitone Galois connection induced by satisfaction between sets of sentences and classes of structures in first-order logic.
+	We prove and interpret the Galois connection induced by satisfaction between sets of sentences and classes of structures in first-order logic.
 \end{abstract}
 
 \maketitle
@@ -29,28 +29,28 @@ Let $\mathcal{L}$ be a first-order language,
 and $\mathcal{S}$ be a set of $\mathcal{L}$-sentences,
 and $\mathcal{M}$ be a class of $\mathcal{L}$-structures.
 
-\begin{definition}[Subject of Set of Sentences]
+\begin{definition}
 	Let $\Phi\subseteq\mathcal{S}$.
 	\[
-		\operatorname{subj}(\Phi)
+		\operatorname{Mod}(\Phi)
 		=
 		\{
 			m\in\mathcal{M}
 			\mid
-			\forall\varphi\in\Phi(m\vDash\varphi)
+			\forall\varphi\in\Phi\,(m\vDash\varphi)
 		\}
 	\]
 \end{definition}
 
-\begin{definition}[Theory of Class of Structures]
+\begin{definition}
 	Let $M\subseteq\mathcal{M}$.
 	\[
-		\operatorname{th}(M)
+		\operatorname{Th}(M)
 		=
 		\{
 			\varphi\in\mathcal{S}
 			\mid
-			\forall m\in M(m\vDash\varphi)
+			\forall m\in M\,(m\vDash\varphi)
 		\}
 	\]
 \end{definition}
@@ -58,19 +58,19 @@ and $\mathcal{M}$ be a class of $\mathcal{L}$-structures.
 \begin{theorem}
 	Let $\Phi\subseteq\mathcal{S}$, and $M\subseteq\mathcal{M}$.
 	\[
-		\Phi\subseteq\operatorname{th}(M)
+		\Phi\subseteq\operatorname{Th}(M)
 		\iff
-		M\subseteq\operatorname{subj}(\Phi)
+		M\subseteq\operatorname{Mod}(\Phi)
 	\]
 \end{theorem}
 
 \begin{proof}
 	\[
-		\Phi\subseteq\operatorname{th}(M)
+		\Phi\subseteq\operatorname{Th}(M)
 		\iff
-		\forall\varphi\in\Phi,\forall m\in M(m\vDash\varphi)
+		\forall\varphi\in\Phi,\,\forall m\in M\,(m\vDash\varphi)
 		\iff
-		M\subseteq\operatorname{subj}(\Phi)
+		M\subseteq\operatorname{Mod}(\Phi)
 	\]
 \end{proof}
 
